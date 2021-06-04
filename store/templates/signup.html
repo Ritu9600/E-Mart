@@ -1,0 +1,53 @@
+{%extends 'base.html'%}
+ {%block css%}
+{%load static%}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}">
+      {%endblock%}
+{%block content%}
+<body style="background-color: grey">
+	<div class="container"  >
+     
+		<h2 class= " border rounded pa" id= "head">Create an Account</h2>
+
+		<form  action="/signup" method="POST" class="post" novalidate id="Login_Form">
+			{% csrf_token %}
+			{% if error %}
+				 <div class="alert alert-danger" role="alert">
+					{{ error }}
+				 </div>
+			{% endif %}
+            <div>
+				<input  value = "{{values.first_name}}" type="text"  name="first_name" required="">
+
+				<label>First Name</label>
+			</div>
+            <div>
+				<input value = "{{values.last_name}}" type="text"  name="last_name" required="">
+
+				<label>Last Name</label>
+			</div>
+			<div>
+				<input  value = "{{values.email}}"type="email"  name="email" required="">
+
+				<label>Email Id</label>
+			</div>
+			<div>
+				<input  value = "{{values.password}}" type="password" id="form_password" name="password" required="">
+
+				<label>Password</label>
+			</div>
+            <div>
+				<input  value = "{{values.phone}}" type="number" id="form_email" name="phone" required="">
+
+				<label>Phone Number</label>
+			</div>
+            
+			<input type="submit" value="Create an Account" name="">
+		</form>
+	</div>
+
+
+
+
+{%endblock%}
+
