@@ -1,0 +1,55 @@
+
+body {
+  background-color: grey !important;
+}
+.container{
+  background-color:white;
+
+}
+.container1{
+	padding-bottom: 5%;
+}
+.card{
+  padding: 0%;
+  box-shadow: 20 ;
+  padding: 1%;
+  background-color: grey !important;
+}
+#header{
+	padding-left: 35%;
+}
+#box{
+    color: red;
+}
+#x{
+   background-color: lightgrey!important;
+}
+#button{
+	color: white;
+}
+#link{
+	color: red;
+}
+.y{
+	margin-top: 3%;
+	padding-top: 2%;
+}
+.address{
+	
+	padding-top: 5%;
+}
+#input{
+	color:red;
+}
+#z{
+	background-color: white;
+}
+#button{
+	padding-left: 5%;
+	padding-right: 5%;
+}
+#button1{
+	padding-left: 44%;
+	padding-right: 48%;
+	font-size: 18px;
+}

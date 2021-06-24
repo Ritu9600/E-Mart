@@ -1,0 +1,205 @@
+{%extends 'base.html'%}
+
+{% block content%}
+{%load custom_filter %}
+{% load cart%}
+{%load static%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/place.css' %}">
+
+<div class="card1" style="background-color: grey!important">
+    <div class="container">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <!-- <h1 chass = "head">Profile Page</h1>-->
+        <div class="card1">
+            <div class="container1">
+                <div class="page-header" id="header">
+                    <h1>Payment Details</h1>
+                </div>
+                <!--<div class = "container1" id ="address">
+                     <h3> Select the address where item is to be delivered </h3>
+                     <div class="list-group-item">
+                         <div class ="col-md-6">
+                             <div class="list-group-item">
+                                 <div class = "card" id = "x">
+                      <div class="list-group-item-heading">
+                          <div class="row radio">
+                            <div class="col-md-6">
+                              <label>
+                                <input type="radio" name="optionShipp" id="input" value="option2">
+                               Address 1
+                              </label>
+                            </div>
+                            <div class="col-xs-5">
+                              <dl class="dl-small">
+                                <dt>xyz</dt>
+                                <dd>xyz,123456 </dd>
+                              </dl>
+                              <button type="button" class="btn btn-success btn-sm" id = "button">Edit</button>
+                              <button class="btn btn-sm btn-link" id ="link">Delete this address</button>
+                            </div>
+                          </div>
+                      </div>
+                      </div>
+                  </div>
+                         </div>
+                         <div class ="col-md-6">
+                             <div class="list-group-item">
+                                 <div class = "card" id = "x">
+                      <div class="list-group-item-heading">
+                          <div class="row radio">
+                            <div class="col-md-6">
+                              <label>
+                                <input type="radio" name="optionShipp" id="input" value="option2">
+                                Address 2
+                              </label>
+                            </div>
+                            <div class="col-xs-5">
+                              <dl class="dl-small">
+                                <dt>xyz</dt>
+                                <dd>xyz,123456 </dd>
+                              </dl>
+                              <button type="button" class="btn btn-success btn-sm" id = "button">Edit</button>
+                              <button class="btn btn-sm btn-link" id ="link">Delete this address</button>
+                            </div>
+                          </div>
+                      </div>
+                      </div>
+                  </div>
+                         </div>
+                     </div>
+
+                </div> -->
+                <!--<div class = "container1">
+                 <div class = "address" id ="address1">
+                     <div class="col-md-3">
+                               <label>
+                                 <input type="radio" name="optionShipp" id="input" value="option2">
+                                 New Address
+                               </label>
+                             </div>
+                     <h3 class ="y"> Enter New Address </h3>
+                     <div class="col-md-12">
+                         <div class="list-group-item">
+                                  <div class = "card" id = "x">
+                       <div class="list-group-item-heading">
+                           <form role="form" class="enter1">
+                                   <div class="form-group">
+                                       <label for="inputname">Name</label>
+                                   <input id="Username" type="Username" class="form-control form-control-large" name="Username" placeholder="Username">
+                                 </div>
+                                 <div class="form-group">
+                                       <label for="inputname"> Street Address</label>
+                                   <input id="Username" type="Username" class="form-control form-control-large" name="Username" placeholder="Enter Address">
+                                 </div>
+                                 <div class="form-group">
+                                       <label for="inputname">Landmark</label>
+                                   <input id="Username" type="Username" class="form-control form-control-large" name="Username" placeholder="Enter nearest Landmark">
+                                 </div>
+                                 <div class="form-group">
+                                       <label for="inputname">PINCODE</label>
+                                   <input id="Username" type="Username" class="form-control form-control-large" name="Username" placeholder="Enter PINCODE">
+                                 </div>
+                                 <div class="form-group">
+                                       <label for="inputname">State</label>
+                                   <input id="Username" type="Username" class="form-control form-control-large" name="Username" placeholder="Enter your State Name">
+                                 </div>
+                                 <div class="form-group">
+                                       <label for="inputname">Country</label>
+                                   <input id="Username" type="Username" class="form-control form-control-large" name="Username" placeholder="Enter your Country Name">
+                                 </div>
+
+                               </form>
+                               <button type="button" class="btn btn-success btn-sm" id = "button">Save Address</button>
+                       </div>
+                       </div>
+                   </div>
+                     </div>
+                 </div>
+                 </div>-->
+            </div>
+            <div class="card1" id="z">
+                <div class="container1" id="payment">
+                    <a type="submit" href="/cart" class="btn btn-secondary float-end"
+                       style=" background-color: green; color: white" aria-describedby="helpId" value="Check out">Back
+                        to Cart </a>
+                    <h3 class="z">Total Amount to be Paid:
+                        {{products|total_cart_price:request.session.cart|currency}} </h3>
+                    <div class="checkbox" id="box">
+                        <!--<label data-toggle="collapse" data-target="#enter">
+                          <input  type="checkbox"> I have a promo code
+                        </label>-->
+
+                    </div>
+                        <div class="col-md-12">
+                            <div class="list-group-item">
+                                <div class="card" id="x">
+
+                                    <div class="list-group-item-heading">
+                                        <div class="row radio">
+                                            <div class="col-md-6">
+                                                <label>
+                                                    <input type="radio" name="optionShipp" id="input" value="option2">
+                                                    My Credit Card
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-5">
+                                                <dl class="dl-small">
+                                                    <dt>Credit Card Number</dt>
+                                                    <dd>1234***********</dd>
+                                                </dl>
+                                                <button type="button" class="btn btn-success btn-sm" id="button">Edit
+                                                    card details
+                                                </button>
+                                                <button class="btn btn-sm btn-link" id="link">Delete this card</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="list-group-item">
+                                <div class="card" id="x">
+                                    <div class="list-group-item-heading">
+                                        <div class="row radio">
+                                            <div class="col-md-12">
+                                                <label>
+                                                    <input type="radio" name="optionShipp" id="input" value="option2">
+                                                    Cash On Delivery
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="list-group-item">
+                                <div class="card" id="x">
+                                    <div class="list-group-item-heading">
+                                        <div class="row radio">
+                                            <div class="col-md-12">
+                                                <label>
+                                                    <input type="radio" name="optionShipp" id="input" value="option2">
+                                                    UPI
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-sm" id="button1">Place Order</button>
+
+                </div>
+            </div>
+        </div>
+        {% endblock%}
+
+

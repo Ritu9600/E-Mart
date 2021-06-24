@@ -9,7 +9,7 @@
 <div class="card " style="padding: 10%; background-color: lightgrey">
     <div class='container1' style=" background-color: white">
         <div class="border rounded p-4 m-4">
-            <p class="display-4 pl-4 ml-4"> Your Orders</p>
+            <p class="display-4 pl-4 ml-4">My Orders</p>
             <div class="table-responsive">
 
                 <table class="table table-inverse table-inverse table-responsive">
@@ -23,25 +23,35 @@
                         <th>Quantity</th>
                         <th>Total</th>
                         <th> Status</th>
+                        <th>Comment Section</th>
                     </tr>
                     </thead>
                     <tbody>
                     {% for order in orders %}
                     <tr>
                         <td scope="row">{{forloop.counter}}</td>
-                        <td><img style="height: 10%" class="rounded-circle" src="{{order.product.image.url}}" alt="..."></td>
+                        <td><img style="height: 10%" class="rounded-circle" src="{{order.product.image.url}}" alt="...">
+                        </td>
                         <td>{{order.product.name}}</td>
                         <td> {{order.date}}</td>
                         <td> {{order.price|currency}}</td>
                         <td> {{order.quantity}}</td>
                         <td> {{order.quantity|multiply:order.price|currency}}</td>
-                        {% if order.status %}
-                        <td> <small class="badge bg-success"> Completed </small></td>
-                        {% else %}
-                        <td> <small class="badge bg-warning text-dark"> Pending </small></td>
-                        {% endif %}
-                    </tr>
 
+
+                        {% if order.status %}
+                        <td><small class="badge bg-success"> Completed </small></td>
+                        {% else %}
+                        <td><small class="badge bg-warning text-dark"> Pending </small></td>
+
+                        {% endif %}
+
+                        <td>
+                            <a class="btn btn-secondary btn-sm float-end" style="background-color: green; color:white"
+                               href="/comments">Comments</a>
+                        </td>
+
+                    </tr>
                     {% endfor %}
                     </tbody>
 
@@ -51,7 +61,6 @@
         </div>
     </div>
 </div>
-
 
 
 {%endblock%}

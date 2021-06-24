@@ -3,7 +3,7 @@
 {% block content%}
 {%load custom_filter %}
 {% load cart%}
-<div class="container-fluid mt-3" style="background-color: grey">
+<div class="container-fluid mt-3"  style="background-color: grey;">
     <div class="row">
 
 
@@ -23,8 +23,9 @@
             <div class="row mx-auto">
                 {% for product in products%}
                 <div class="col-lg-4">
+                    {% load static %}
                     <div class="card mx-auto mb-3" id='{{product.id}}' style="width: 18rem;">
-                        <img src="..." class="card-img-top" src="{{product.image.url}}" alt="...">
+                        <img  class="img-fluid" alt="Responsive image" style="height: 260px;" src="{{product.image.url}}">
                         <div class="card-body">
                             <p class="card-title" style="color: orange">{{product.name}}</p>
                             <p class="card-text"><b> {{product.price|currency}}</b></p>

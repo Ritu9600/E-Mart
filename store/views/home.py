@@ -48,3 +48,7 @@ class Index(View):
         # return render(request, 'orders/orders.html')
         print('you are: ', request.session.get('email'))
         return render(request, 'index.html', data)
+
+class Store(View):
+   def get(self, request):
+        return render(request, 'index.html')

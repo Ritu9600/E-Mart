@@ -15,6 +15,7 @@ class CheckOut(View):
         cart = request.session.get('cart')
         products = Product.get_products_by_id(list(cart.keys()))
 
+
         for product in products:
             order = Order(customer=Customer(id=customer),
                           product=product,
@@ -22,6 +23,6 @@ class CheckOut(View):
                           address=address,
                           phone=phone,
                           quantity=cart.get(str(product.id)))
+            order.placeOrder()
         request.session['cart'] = {}
-        order.placeOrder()
-        return redirect('cart')
+        return redirect('orders')
